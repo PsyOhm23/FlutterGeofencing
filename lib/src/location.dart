@@ -3,16 +3,16 @@
 // found in the LICENSE file.
 
 // Internal.
-Location locationFromList(List<double> l) => Location._fromList(l);
+GLocation locationFromList(List<double> l) => GLocation._fromList(l);
 
 /// A simple representation of a geographic location.
-class Location {
+class GLocation {
   final double latitude;
   final double longitude;
 
-  const Location(this.latitude, this.longitude);
+  const GLocation(this.latitude, this.longitude);
 
-  Location._fromList(List<double> l)
+  GLocation._fromList(List<double> l)
       : assert(l.length == 2),
         latitude = l[0],
         longitude = l[1];
