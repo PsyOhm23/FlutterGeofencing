@@ -115,7 +115,7 @@ static BOOL initialized = NO;
 - (void)locationManager:(CLLocationManager *)manager
     monitoringDidFailForRegion:(CLRegion *)region
                      withError:(NSError *)error {
-  NSLog(@"Monitoring error %@: %@", error.code, error.localizedDescription);
+  NSLog(@"Monitoring error %@", error);
 }
 
 #pragma mark GeofencingPlugin Methods
