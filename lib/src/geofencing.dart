@@ -59,7 +59,7 @@ class GeofenceRegion {
   final String id;
 
   /// The location of the geofence.
-  final Location location;
+  final GLocation location;
 
   /// The radius around `location` that will be considered part of the geofence.
   final double radius;
@@ -75,7 +75,7 @@ class GeofenceRegion {
   GeofenceRegion(
       this.id, double latitude, double longitude, this.radius, this.triggers,
       {AndroidGeofencingSettings androidSettings})
-      : location = Location(latitude, longitude),
+      : location = GLocation(latitude, longitude),
         androidSettings = (androidSettings ?? AndroidGeofencingSettings());
 
   List<dynamic> _toArgs() {
@@ -135,7 +135,7 @@ class GeofencingManager {
   /// `GeofenceEvent.dwell` trigger on iOS, `UnsupportedError` is thrown.
   static Future<void> registerGeofence(
       GeofenceRegion region,
-      void Function(List<String> id, Location location, GeofenceEvent event)
+      void Function(List<String> id, GLocation location, GeofenceEvent event)
           callback) async {
     if (Platform.isIOS &&
         region.triggers.contains(GeofenceEvent.dwell) &&
