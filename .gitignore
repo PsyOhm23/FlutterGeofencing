@@ -6,3 +6,12 @@
 pubspec.lock
 
 build/
+
+.idea/
+.vscode/
+android/.project
+android/.settings/
+example/android/.project
+example/android/.settings/
+example/ios/Frameworks/
+example/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
